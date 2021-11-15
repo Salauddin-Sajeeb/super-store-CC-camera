@@ -11,6 +11,7 @@ import PrivateRoute from './Home/Pages/Home/PrivateRoute/PrivateRoute';
 import purchase from './Home/Pages/Home/Home Service/Purchase/purchase';
 import Purchase from './Home/Pages/Home/Home Service/Purchase/purchase';
 import Dashboard from './Home/Pages/Home/Dashboard/Dashboard';
+import Error from './Home/Error/Error';
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
             <Route path="/addservice">
               <AddService></AddService>
             </Route>
+            <Route path="*">
+              <Error></Error>
+            </Route>
+
           </Switch>
         </BrowserRouter>
       </AuthProvider>
