@@ -28,8 +28,8 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
                         {user.displayName}
                     </Typography>
-                    <Link to="/appointment">
-                        <Button style={{ textDecoration: 'none', color: 'white' }} color='inherit'>Appointment</Button>
+                    <Link to="/">
+                        <Button style={{ textDecoration: 'none', color: 'white' }} color='inherit'>home</Button>
                     </Link>
                     <Link to="/explore">
                         <Button style={{ textDecoration: 'none', color: 'white' }} color='inherit'>All PAckages</Button>

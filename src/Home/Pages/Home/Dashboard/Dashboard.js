@@ -36,13 +36,14 @@ import AdminRoute from '../../Login/Admin route/AdminRoute';
 import Reviews from '../Review/Reviews';
 import AddReview from '../Review/AddReview';
 import Payment from './Payment/Payment';
+import ManageOrder from '../../Add Service/Manage services/Manage Order/ManageOrder';
 
 const drawerWidth = 240;
 function Dashboard(props) {
     let { path, url } = useRouteMatch();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin, logOut } = useAuth()
+    const { admin, logOut, isLoading } = useAuth()
 
 
     const handleDrawerToggle = () => {
@@ -51,30 +52,37 @@ function Dashboard(props) {
 
     const drawer = (
         <div>
+
             <Toolbar />
+
             <Divider />
             {!admin &&
-                <Box>
+                <List>
+
                     <Link to={`${url}/myorders`}>
-                        <Button color='inherit'>My orders</Button>
-                    </Link>
+                        <Button sx={{ m: 2 }} color='inherit'>My orders</Button>
+                    </Link> <br />
                     <Link to={`${url}/reviews`}>
                         <Button color='inherit'>Add a Review</Button>
-                    </Link>
+                    </Link> <br />
                     <Link to={`${url}/payment`}>
                         <Button color='inherit'>Payment</Button>
                     </Link>
-                    <Button onClick={logOut} color="inherit">Log Out</Button>
-                </Box>}
+
+
+                </List>}
             {admin && <Box>
                 <Link to={`${url}/makeadmin`}>
-                    <Button sx={{ pb: 4 }} color='inherit'>make an</Button>
+                    <Button sx={{ pb: 4 }} color='inherit'>make an admin</Button>
                 </Link> <br />
                 <Link to={`${url}/addservice`}>
                     <Button color='inherit'>Add a Service</Button>
-                </Link>
+                </Link> <br />
                 <Link to={`${url}/manageservice`}>
                     <Button color='inherit'>Manage services</Button>
+                </Link> <br />
+                <Link to={`${url}/manageorder`}>
+                    <Button color='inherit'>Manage Order</Button>
                 </Link>
             </Box>
             }
@@ -154,7 +162,7 @@ function Dashboard(props) {
 
                 <Switch>
                     <Route exact path={path}>
-                        <h3>Please select a topic.</h3>
+                        <h3>welcome to Dashboard</h3>
                     </Route>
                     <Route path={`${path}/addservice`}>
                         <AddService></AddService>
@@ -167,6 +175,9 @@ function Dashboard(props) {
                     </Route>
                     <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageorder`}>
+                        <ManageOrder></ManageOrder>
                     </AdminRoute>
                     <AdminRoute path={`${path}/manageservice`}>
                         <ManageService></ManageService>
