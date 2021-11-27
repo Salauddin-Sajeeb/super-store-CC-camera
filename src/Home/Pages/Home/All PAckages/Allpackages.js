@@ -4,12 +4,11 @@ import { Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/
 import Navigation from '../Navigation/Navigation';
 import { Link } from 'react-router-dom';
 
-import Button from '@mui/material/Button';
 
 const Allpackages = () => {
     const [packages, setPackages] = useState([])
     useEffect(() => {
-        fetch('https://immense-beyond-10275.herokuapp.com/packages')
+        fetch('https://immense-beyond-10275.herokuapp.com//packages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

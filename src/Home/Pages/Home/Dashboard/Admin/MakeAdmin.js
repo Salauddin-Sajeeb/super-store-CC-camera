@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdmin = e => {
 
-        fetch('https://immense-beyond-10275.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

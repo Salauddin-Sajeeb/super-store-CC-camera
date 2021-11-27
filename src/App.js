@@ -8,7 +8,7 @@ import Home from './Home/Pages/Home/Home';
 import Allpackages from './Home/Pages/Home/All PAckages/Allpackages';
 import AddService from './Home/Pages/Add Service/AddService';
 import PrivateRoute from './Home/Pages/Home/PrivateRoute/PrivateRoute';
-import purchase from './Home/Pages/Home/Home Service/Purchase/purchase';
+
 import Purchase from './Home/Pages/Home/Home Service/Purchase/purchase';
 import Dashboard from './Home/Pages/Home/Dashboard/Dashboard';
 import Error from './Home/Error/Error';

@@ -33,10 +33,12 @@ import ManageService from '../../Add Service/Manage services/ManageService';
 import useAuth from '../../Hooks/useAuth';
 import MyOrder from '../Orders/MyOrder';
 import AdminRoute from '../../Login/Admin route/AdminRoute';
-import Reviews from '../Review/Reviews';
+
 import AddReview from '../Review/AddReview';
 import Payment from './Payment/Payment';
 import ManageOrder from '../../Add Service/Manage services/Manage Order/ManageOrder';
+import { Spinner } from 'react-bootstrap';
+import AllOrder from '../Orders/AllOrder';
 
 const drawerWidth = 240;
 function Dashboard(props) {
@@ -45,8 +47,11 @@ function Dashboard(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { admin, logOut, isLoading } = useAuth()
 
-
+    if (isLoading) {
+        return <Spinner animation="border" variant="danger" />
+    }
     const handleDrawerToggle = () => {
+
         setMobileOpen(!mobileOpen);
     };
 
@@ -61,16 +66,16 @@ function Dashboard(props) {
 
                     <Link to={`${url}/myorders`}>
                         <Button sx={{ m: 2 }} color='inherit'>My orders</Button>
-                    </Link> <br />
+                    </Link> <br /> <br />
                     <Link to={`${url}/reviews`}>
                         <Button color='inherit'>Add a Review</Button>
-                    </Link> <br />
-                    <Link to={`${url}/payment`}>
-                        <Button color='inherit'>Payment</Button>
-                    </Link>
+                    </Link> <br /> <br />
+
+
 
 
                 </List>}
+
             {admin && <Box>
                 <Link to={`${url}/makeadmin`}>
                     <Button sx={{ pb: 4 }} color='inherit'>make an admin</Button>
@@ -86,7 +91,6 @@ function Dashboard(props) {
                 </Link>
             </Box>
             }
-
 
             <Button onClick={logOut} color="inherit">Log Out</Button>
 
@@ -167,9 +171,10 @@ function Dashboard(props) {
                     <Route path={`${path}/addservice`}>
                         <AddService></AddService>
                     </Route>
-                    <Route path={`${path}/payment`}>
+                    <Route path={`${path}/payment/:paymentId`}>
                         <Payment></Payment>
                     </Route>
+
                     <Route path={`${path}/reviews`}>
                         <AddReview></AddReview>
                     </Route>
@@ -181,6 +186,9 @@ function Dashboard(props) {
                     </AdminRoute>
                     <AdminRoute path={`${path}/manageservice`}>
                         <ManageService></ManageService>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageorder`}>
+                        <AllOrder></AllOrder>
                     </AdminRoute>
                     <Route path={`${path}/myorders`}>
                         <MyOrder></MyOrder>

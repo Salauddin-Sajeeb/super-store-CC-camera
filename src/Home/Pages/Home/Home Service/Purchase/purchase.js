@@ -65,6 +65,8 @@ const Purchase = () => {
                         <input className="m-2" placeholder="Address" defaultValue="" {...register("address")} />
                         <input className="m-2" placeholder="City" defaultValue="" {...register("city")} />
                         <input className="m-2" placeholder="phone number" defaultValue="" {...register("phone")} />
+                        <input className="m-2" type='file' placeholder="upload a file" defaultValue="" {...register("img")} />
+                        <input className="m-2" type="number" defaultValue={singleDetail?.price} {...register("price", { required: true })} />
 
                         <input type="submit" />
                     </form>
