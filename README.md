@@ -4,9 +4,9 @@ This is a CC Camera  service website where you can purchase different type of ca
 
  🔗 Links
  
- Server Side Link: (https://github.com/programming-hero-web-course-4/niche-website-server-side-Salauddin-Sajeeb)
+ Server Side Link: (https://github.com/Salauddin-Sajeeb/super-store-CC--server)
 
- Client Side Github:(https://github.com/programming-hero-web-course-4/niche-website-client-side-Salauddin-Sajeeb)
+ Client Side Github:(https://github.com/Salauddin-Sajeeb/super-store-CC-camera)
 
 Website Live Link : https://super-store-31fee.web.app/
   
